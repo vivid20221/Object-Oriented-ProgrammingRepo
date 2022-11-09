@@ -1,8 +1,4 @@
-const inquirer = require('inquirer');
-const fs = require('fs');
-
-const generateHTML = ({ name, Job, Email}) =>
-  `<!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="en">
   
   <head>
@@ -43,6 +39,10 @@ const generateHTML = ({ name, Job, Email}) =>
               <li class="list-group-item">Due Date</li>
               <li class="list-group-item">Hourly Rate</li>
             </ul>
+            <div class="card-footer">
+              <button class="btn btn-block custom-btn" data-toggle="modal" data-target="#project-modal">Add
+                Project</button>
+            </div>
           </div>
         </div>
       </div>
@@ -63,6 +63,10 @@ const generateHTML = ({ name, Job, Email}) =>
               <li class="list-group-item">Due Date</li>
               <li class="list-group-item">Hourly Rate</li>
             </ul>
+            <div class="card-footer">
+              <button class="btn btn-block custom-btn" data-toggle="modal" data-target="#project-modal">Add
+                Project</button>
+            </div>
           </div>
         </div>
       </div>
@@ -83,6 +87,10 @@ const generateHTML = ({ name, Job, Email}) =>
               <li class="list-group-item">Due Date</li>
               <li class="list-group-item">Hourly Rate</li>
             </ul>
+            <div class="card-footer">
+              <button class="btn btn-block custom-btn" data-toggle="modal" data-target="#project-modal">Add
+                Project</button>
+            </div>
           </div>
         </div>
       </div>
@@ -103,6 +111,10 @@ const generateHTML = ({ name, Job, Email}) =>
               <li class="list-group-item">Due Date</li>
               <li class="list-group-item">Hourly Rate</li>
             </ul>
+            <div class="card-footer">
+              <button class="btn btn-block custom-btn" data-toggle="modal" data-target="#project-modal">Add
+                Project</button>
+            </div>
           </div>
         </div>
       </div>
@@ -123,6 +135,10 @@ const generateHTML = ({ name, Job, Email}) =>
               <li class="list-group-item">Due Date</li>
               <li class="list-group-item">Hourly Rate</li>
             </ul>
+            <div class="card-footer">
+              <button class="btn btn-block custom-btn" data-toggle="modal" data-target="#project-modal">Add
+                Project</button>
+            </div>
           </div>
         </div>
       </div>
@@ -137,33 +153,4 @@ const generateHTML = ({ name, Job, Email}) =>
     <script src="./assets/js/script.js"></script>
   </body>
   
-  </html>`;
-
-inquirer
-  .prompt([
-    {
-      type: 'input',
-      name: 'name',
-      message: 'What is your name?',
-    },
-    {
-      type: 'checkbox',
-      name: 'Job',
-      message: 'What is your job title?',
-      choices: ['Manager', 'Engineer', 'Intern',
-    ], 
-    },
-    {
-      type: 'input',
-      name: 'Email',
-      message: 'Enter your Email',
-    },
-   
-  ])
-  .then((answers) => {
-    const htmlPageContent = generateHTML(answers);
-
-    fs.writeFile('index.html', htmlPageContent, (err) =>
-      err ? console.log(err) : console.log('Successfully created index.html!')
-    );
-  });
+  </html>
