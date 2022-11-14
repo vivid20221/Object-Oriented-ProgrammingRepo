@@ -1,8 +1,8 @@
   const inquirer = require('inquirer');
-  const Manager = require('./lib/Manager');
-  const Engineer = require('./lib/Engineer');
-  const Intern = require('./lib/Intern');
-  const generateSite = require('./src/generate-site.js');
+  const Manager = require('./main/lib/Manager');
+  const Engineer = require('./main/lib/Engineer');
+  const Intern = require('./main/lib/Intern');
+  const generateSite = require('./main/src/generate-site');
   const fs = require("fs");
   const path = require("path");
   const OUTPUT_DIR = path.resolve(__dirname, "output")

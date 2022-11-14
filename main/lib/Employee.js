@@ -1,20 +1,3 @@
-const Employee = require('./index.js');
-
-
-// name
-
-// id
-
-// email
-
-// getName()
-
-// getId()
-
-// getEmail()
-
-// getRole() // Returns 'Employee'
-
 class Employee {
     constructor(name, id, email) {
         this.name = name;
