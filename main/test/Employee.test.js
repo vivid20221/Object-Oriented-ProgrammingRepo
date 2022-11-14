@@ -1,69 +1,24 @@
 const Employee = require('../lib/Employee');
+const employee = new Employee('julian', '1342789', 'julianj9011@gmail.com');
 
-describe("Employee", () => {
-  it("should return an", () => {
-    expect(new Letter('j').visible).toBe(false);
-  });
-
-  it('Correct guess makes character visible', () => {
-    const letter = new Letter('j');
-    const { visible } = letter;
-
-    // Correct guess
-    letter.guess('j');
-
-    // Letter was not originally visible
-    expect(visible).toBe(false);
-
-    // Letter is now visible
-    expect(letter.visible).toBe(true);
-  });
-
-  it('Incorrect guess does not make character visible', () => {
-    const letter = new Letter('j');
-    const { visible } = letter;
-
-    // Incorrect guess
-    letter.guess('l');
-
-    // Letter was not originally visible
-    expect(visible).toBe(false);
-
-    // Letter is still not visible
-    expect(letter.visible).toBe(false);
-  });
-
-  it('Should return the guessed character when using toString', () => {
-    const letter = new Letter('j');
-
-    letter.guess('j');
-
-    expect(letter.toString()).toBe('j');
-  });
+describe('It should get the constructor values for the employee object', () => {
+    it(employee.name).toBe('julian');
+    it(employee.id).toBe('1342789');
+    it(employee.email).toBe('julianj9011@gmail.com');
 });
 
-describe('Letter class', () => {
-  it("Characters that aren't digits or letters are instantly visible", () => {
-    expect(new Letter('?').visible).toBe(true);
-  });
+describe('it should get the name from the getName() method', () => {
+    it(employee.getName()).toBe('julian');
+});
 
-  it('toString returns _ for letters', () => {
-    expect(new Letter('a').toString()).toBe('_');
-  });
+describe('it should get the id from the getId() method', () => {
+    it(employee.getId()).toBe('1342789');
+});
 
-  describe('guess', () => {
-    it('Correct guess returns true', () => {
-      expect(new Letter('j').guess('j')).toBe(true);
-    });
+describe('it should get the email from the getEmail() method', () => {
+    it(employee.getEmail()).toBe('julianj9011@gmail.com');
+});
 
-    it('Incorrect guess returns false', () => {
-      expect(new Letter('j').guess('l')).toBe(false);
-    });
-  });
-
-  describe('getRole', () => {
-    it('returns Employee', () => {
-      expect(new Letter('l').getSolution()).toBe('l');
-    });
-  });
+describe('it should get the role from the getRole() method', () => {
+    it(employee.getRole()).toBe('Employee');
 });

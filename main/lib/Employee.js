@@ -1,4 +1,4 @@
-const Employee = require('./);
+const Employee = require('./index.js');
 
 
 // name
@@ -14,3 +14,5 @@ const Employee = require('./);
 // getEmail()
 
 // getRole() // Returns 'Employee'
+
+const Employee 
